@@ -1,0 +1,568 @@
+:root {
+    --green: #00ff00;
+    --dark-green: #003300;
+    --black: #000000;
+    --glow: 0 0 5px var(--green);
+    --terminal-green: #00ff00;
+    --terminal-dim: #00b300;
+    --terminal-bg: #0a0a0a;
+    --terminal-shadow: rgba(0, 255, 0, 0.2);
+    --font-mono: 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: var(--terminal-green);
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: #000000;
+}
+
+.main-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background: #000000;
+    color: #00ff00;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #00ff00;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.main-content h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-family: 'Courier New', monospace;
+}
+
+.main-content p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-family: 'Courier New', monospace;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: var(--glow);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--green);
+    opacity: 0.8;
+}
+
+/* Navigation Styles */
+.terminal-nav {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--green);
+    padding-bottom: 1rem;
+}
+
+.terminal-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.terminal-nav a {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.terminal-nav a:hover {
+    text-shadow: var(--glow);
+    opacity: 0.8;
+}
+
+/* Section Styles */
+.terminal-section {
+    margin-bottom: 4rem;
+    padding: 1rem;
+    border: 1px solid var(--green);
+    position: relative;
+}
+
+.terminal-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: var(--glow);
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    border: 1px solid var(--green);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 10px var(--green);
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+.project-links a:hover {
+    text-shadow: var(--glow);
+}
+
+/* Enhanced Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skill-category {
+    border: 1px solid var(--terminal-dim);
+    padding: 20px;
+    background: rgba(0, 255, 0, 0.05);
+}
+
+.skill-category h3 {
+    color: var(--terminal-green);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--terminal-dim);
+    padding-bottom: 5px;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.skill-list li {
+    margin: 12px 0;
+    padding-left: 15px;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.skill-list li:before {
+    content: ">";
+    color: var(--terminal-dim);
+    position: absolute;
+    left: 0;
+    margin-right: 10px;
+}
+
+/* Command Line Styling */
+.command-line {
+    color: var(--terminal-green);
+    margin: 15px 0;
+    font-family: var(--font-mono);
+    font-weight: bold;
+}
+
+.command-line::before {
+    content: "$";
+    margin-right: 10px;
+    color: var(--terminal-dim);
+}
+
+.output {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+/* Enhanced Project Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.project-card {
+    border: 1px solid var(--terminal-dim);
+    padding: 20px;
+    background: rgba(0, 255, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--terminal-shadow);
+}
+
+.project-features {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.project-features li {
+    margin: 12px 0;
+    padding-left: 15px;
+    position: relative;
+}
+
+.project-features li::before {
+    content: ">";
+    color: var(--terminal-dim);
+    position: absolute;
+    left: 0;
+}
+
+
+
+/* CRT Effect */
+.crt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.crt::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}
+
+.crt::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+}
+
+/* Terminal Window */
+.terminal {
+    background-color: var(--terminal-bg);
+    border: 1px solid var(--terminal-green);
+    border-radius: 6px;
+    box-shadow: 0 0 10px var(--terminal-shadow);
+    margin: 20px auto;
+    max-width: 900px;
+    overflow: hidden;
+}
+
+.terminal-header, .terminal-window-header {
+    background-color: var(--terminal-bg);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--terminal-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+    padding-left: 4px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-button.close {
+    background-color: #ff5f56;
+}
+
+.terminal-button.minimize {
+    background-color: #ffbd2e;
+}
+
+.terminal-button.maximize {
+    background-color: #27c93f;
+}
+
+.terminal-title, .terminal-window-title {
+    color: var(--terminal-green);
+    font-size: 14px;
+    margin-right: 12px;
+}
+
+.terminal-content {
+    padding: 16px;
+}
+
+.terminal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+    background: var(--terminal-bg);
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+    background-color: var(--terminal-green);
+    border-radius: 4px;
+    border: 2px solid var(--terminal-bg);
+}
+
+/* Command Prompt */
+.command-prompt {
+    margin-bottom: 30px;
+}
+
+.prompt {
+    color: var(--terminal-green);
+    margin-right: 10px;
+}
+
+.command {
+    position: relative;
+}
+
+.command::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 15px;
+    background-color: var(--terminal-green);
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: var(--terminal-green);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Animations */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flicker {
+    0% { opacity: 0.27861; }
+    5% { opacity: 0.34769; }
+    10% { opacity: 0.23604; }
+    15% { opacity: 0.90626; }
+    20% { opacity: 0.18128; }
+    25% { opacity: 0.83891; }
+    30% { opacity: 0.65583; }
+    35% { opacity: 0.67807; }
+    40% { opacity: 0.26559; }
+    45% { opacity: 0.84693; }
+    50% { opacity: 0.96019; }
+    55% { opacity: 0.08594; }
+    60% { opacity: 0.20313; }
+    65% { opacity: 0.71988; }
+    70% { opacity: 0.53455; }
+    75% { opacity: 0.37288; }
+    80% { opacity: 0.71428; }
+    85% { opacity: 0.70419; }
+    90% { opacity: 0.7003; }
+    95% { opacity: 0.36108; }
+    100% { opacity: 0.24387; }
+}
+
+/* Terminal Cursor */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: var(--terminal-green);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        margin: 10px 0;
+    }
+    
+    .contact-info p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .contact-info .label {
+        width: auto;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
+@keyframes fadeOut {
+    from { 
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+    to { 
+        opacity: 0;
+        transform: translateX(-50%) scale(0.95);
+    }
+}
+
+/* Update terminal buttons to show pointer on hover */
+.terminal-button {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.terminal-button:hover {
+    opacity: 1;
+}
+
+/* Command specific styling */
+.command-output.error {
+    color: #ff5f5f;
+}
+
+.command-output.success {
+    color: #5fff5f;
+}
+
+.command-output.help {
+    color: #5f5fff;
+}
+
+/* Typing animation for new commands */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 0.5s steps(30, end);      
+}

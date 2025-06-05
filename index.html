@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="crt"></div>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="terminal-button close"></span>
+                <span class="terminal-button minimize"></span>
+                <span class="terminal-button maximize"></span>
+            </div>
+            <div class="terminal-title">portfolio.exe</div>
+        </div>
+        <div class="terminal-content">
+            <div class="command-prompt">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <span class="command">./welcome.sh</span>
+            </div>
+            
+
+
+            <section id="skills" class="section">
+                <h2>> Skills</h2>
+                <div class="command-line">ls -la skills/</div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages:</h3>
+                        <ul class="skill-list">
+                            <li>JavaScript/TypeScript</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>C++</li>
+                            <li>HTML5/CSS3</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks:</h3>
+                        <ul class="skill-list">
+                            <li>React.js</li>
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>Django</li>
+                            <li>TensorFlow</li>
+                            <li>Flutter</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>> Projects</h2>
+                <div class="command-line">find ./projects -name "*.md" | xargs cat</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>AI-Powered Task Manager</h3>
+                        <p>A smart task management system that uses machine learning to prioritize and categorize tasks. Built with React, Python, and TensorFlow.</p>
+                        <ul class="project-features">
+                            <li>Natural language processing for task input</li>
+                            <li>Automated task categorization</li>
+                            <li>Priority prediction based on user patterns</li>
+                        </ul>
+                        <div class="tech-stack">Tech: React, Python, TensorFlow, MongoDB</div>
+                        <div class="project-links">
+                            <a href="#">View Demo</a>
+                            <a href="#">GitHub Repo</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Real-Time Collaboration Platform</h3>
+                        <p>A WebSocket-based platform enabling real-time document editing and team collaboration with version control.</p>
+                        <ul class="project-features">
+                            <li>Real-time synchronization</li>
+                            <li>Document version history</li>
+                            <li>User presence indicators</li>
+                        </ul>
+                        <div class="tech-stack">Tech: Node.js, Socket.io, React, PostgreSQL</div>
+                        <div class="project-links">
+                            <a href="#">Live Site</a>
+                            <a href="#">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Cloud Infrastructure Monitor</h3>
+                        <p>A dashboard for monitoring and managing cloud resources across multiple providers with automated scaling.</p>
+                        <ul class="project-features">
+                            <li>Multi-cloud support</li>
+                            <li>Resource usage analytics</li>
+                            <li>Cost optimization suggestions</li>
+                        </ul>
+                        <div class="tech-stack">Tech: Vue.js, Go, AWS SDK, Docker</div>
+                        <div class="project-links">
+                            <a href="#">Documentation</a>
+                            <a href="#">Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
