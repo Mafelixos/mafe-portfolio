@@ -13,14 +13,14 @@ replaces the (in shambles) https://mafelixos.vercel.app
 * uses vite to install react
 *
 
-### Instlation
+### Installation
 
 * coming soon
 
 ## Authors
 
-mafe
-[@DomPizzie](https://discord.com/users/843603059523190805)
+mafelixos
+[.mafelixos.](https://discord.com/users/843603059523190805)
 
 ## License
 
