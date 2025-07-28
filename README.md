@@ -19,7 +19,6 @@ replaces the (in shambles) https://mafelixos.vercel.app
 
 ## Authors
 
-mafelixos
 [.mafelixos.](https://discord.com/users/843603059523190805)
 
 ## License
